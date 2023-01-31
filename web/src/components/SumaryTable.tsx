@@ -8,7 +8,6 @@ const summaryDates = generateDatesFromYearBeginning();
 const minimusSummaryDatesSize = 18 * 7;
 const amountOfDaysToFill = minimusSummaryDatesSize - summaryDates.length;
 
-console.log(summaryDates);
 export function SumaryTable() {
   return (
     <div className="w-full flex">
@@ -27,7 +26,13 @@ export function SumaryTable() {
 
       <div className="grid grid-rows-7 grid-flow-col gap-3">
         {summaryDates.map((date) => {
-          return <HabitDay key={String(date)} />;
+          return (
+              <HabitDay 
+                key={String(date)}
+                amount={5}
+                completed={Math.round(Math.random() * 5)}
+              />
+            );
         })}
         {amountOfDaysToFill > 0 &&
           Array.from({ length: amountOfDaysToFill }).map((_, i) => {
