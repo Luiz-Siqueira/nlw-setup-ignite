@@ -53,7 +53,7 @@ export function SumaryTable() {
               key={String(date)}
               date={date}
               amount={dayInSummary?.amount}
-              completed={dayInSummary?.completed}
+              defaultCompleted={dayInSummary?.completed}
             />
           );
         })}
